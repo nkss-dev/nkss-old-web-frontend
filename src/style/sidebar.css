@@ -1,0 +1,149 @@
+.sidebar{
+    background-color: rgb(0, 0, 0);
+    width: 16rem;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    color: rgb(214, 214, 214);
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    transition: width 0.2s ease-in;
+    position: relative;
+    overflow: hidden;
+}
+.sidebar.inactive{
+    width: 4rem;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+.hamburger{
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.sidebar.inactive .hamburger{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sidebar.inactive .header {
+    display: none;
+}
+.header h1{
+    font-size: 2rem;
+    white-space: nowrap;
+}
+.header button{
+    background-color: transparent;
+    border: none;
+    color: rgb(214, 214, 214);
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+.divider{
+    border: 1px solid rgb(214, 214, 214);
+    background-color: rgb(214, 214, 214);
+    border-radius: 2px;
+    margin-top: 1rem;
+}
+.menuItem{
+    /* border: 2px solid white; */
+    margin-top: 1rem;
+    padding: 0.5rem;
+    display: flex;
+    flex-wrap: nowrap;
+}
+.menuItem a{
+    margin-left: 0.5rem;
+    white-space: nowrap;
+    text-decoration: none;
+    color: rgb(214, 214, 214);
+    user-select: none;
+    cursor: pointer;
+}
+.menuItem button{
+    background-color: transparent;
+    border: none;
+    color: rgb(214, 214, 214);
+    font-size: 1rem;
+    cursor: pointer;
+}
+.sidebar.inactive .menuItem a{
+    display: none;
+}
+.sidebar .sub-menu-container{
+    border-left: 1px solid rgb(214, 214, 214);
+    padding: 0rem 1.5rem;
+    margin-left: 1rem;
+    overflow: hidden;
+    height: 8.5rem;
+    transition: height 0.2s ease-in;
+}
+.sidebar .sub-menu-container.subMenuClose{
+    height: 0;
+}
+.sidebar .sub-menu-container li{
+    list-style: none;
+    margin-bottom: 0.5rem;
+}
+.sidebar .sub-menu-container a{
+    text-decoration: none;
+    color: rgb(214, 214, 214);
+}
+.sidebar .footer{
+    background-color: rgb(51, 51, 51);
+    padding: 0.5rem;
+    border-radius: 4px;
+    position: absolute;
+    width: 85.5%;
+    bottom: 1rem;
+}
+.sidebar .footer div{
+    display: flex;
+    flex-wrap: nowrap;
+}
+.sidebar .footer button{
+    background-color: transparent;
+    border: none;
+    color: rgb(214, 214, 214);
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sidebar .footer span{
+    color: rgb(214, 214, 214);
+    margin-left: 0.5rem;
+    white-space: nowrap;
+}
+.sidebar .footer .logout{
+    margin-top: 1rem;
+}
+.sidebar.inactive .footer{
+    width: fit-content;
+}
+.sidebar.inactive span{
+    display: none;
+}
+@media screen and (max-width: 500px) and (orientation: portrait) {
+    .sidebar{
+        width: 100vw;
+        position: absolute;
+    }
+    .sidebar.inactive{
+        position: relative;
+    }
+}
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    .sidebar .menuItemsContainer{
+        height: 9.5rem;
+        overflow-y: scroll;
+    }
+    .sidebar .menuItemsContainer::-webkit-scrollbar{
+        width: 0px;
+    }
+}
