@@ -1,0 +1,23 @@
+.folderCard{
+    /* border: 2px solid white; */
+    width: 15rem;
+    height: 15rem;
+    margin: 1.5rem 0rem;
+}
+.folderCard .imgCont{
+    position: relative;
+    /* border: 2px solid wheat; */
+    height: 11rem;
+}
+.folderCard img{
+    position: absolute;
+    max-height: 11rem;
+    max-width: 90%;
+}
+.folderCard .shift{
+    left: 5%;
+}
+.folderCard p{
+    color: #0CBC8B;
+    text-align: center;
+}

@@ -1,0 +1,79 @@
+.homeCardCont{
+    /* border: 2px solid white; */
+    border-radius: 10px;
+    height: 24rem;
+    width: 16rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+.homeCardCont .imgCont{
+    background-color: white;
+    height: 16rem;
+    width: 100%;
+    border-radius: 10px;
+    padding: 1rem 1rem 0rem 1rem;
+}
+.homeCardCont .bottom{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 8rem;
+}
+.homeCardCont .bottom h1{
+    color:#0CBC8B;
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: 700;
+}
+.homeCardCont .bottom p{
+    text-align: center;
+    font-size: 0.7rem;
+    padding: 0rem 3rem;
+}
+.homeCardCont .imgCont img{
+    width: 100%;
+}
+.notesCard .imgCont{
+    position: relative;
+}
+.notesCard .imgCont img{
+    position: absolute;
+}
+.notesCard .group{
+    max-width: 80%;
+}
+.notesCard .vector2{
+    max-width: 30%;
+    right: 20%;
+}
+.notesCard .img2{
+    max-width: 23%;
+    right: 25%;
+    top: 8%;
+}
+.notesCard .vector3{
+    max-width: 30%;
+    left: 10%;
+    bottom: 30%;
+}
+.notesCard .img3{
+    max-width: 23%;
+    left: 15%;
+    bottom: 30%;
+}
+.notesCard .vector4{
+    max-width: 30%;
+    right: 5%;
+    bottom: 5%;
+}
+.notesCard .img4{
+    max-width: 23%;
+    right: 8%;
+    bottom: 5%;
+}
+.clubsCard img{
+    max-height: 100%;
+}

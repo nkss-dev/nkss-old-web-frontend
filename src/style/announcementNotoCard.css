@@ -1,0 +1,28 @@
+.announcementNotoCard{ 
+    display: flex;
+    /* border: 2px solid green; */
+    background-color: white;
+    justify-content: space-between;
+    border-radius: 12px;
+    padding: 0rem 2rem;
+    margin-top: 0.5rem;
+    align-items: center;
+    padding-bottom: 0;
+}
+.announcementNotoCard p{
+    position: relative;
+    color: black;
+    /* border: 2px solid black; */
+    top: 10%;
+}
+.announcementNotoCard button{
+    background-color: #7B61FF;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.7rem 1.5rem;
+    margin-right: 1rem;
+    margin-top: 1rem;
+    position: relative;
+    bottom: 10%;
+}

@@ -5,6 +5,7 @@ import { GiHamburgerMenu } from 'react-icons/gi'
 import { MdCategory } from 'react-icons/md'
 import { BiSupport, BiLogOut } from 'react-icons/bi'
 import { FaUserCircle } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
 
 export default function Sidebar() {
 
@@ -20,7 +21,7 @@ export default function Sidebar() {
         <div className={`sidebar ${Expanded ? "" : "inactive"}`}>
             <div className="header">
                 <h1 className="brand">
-                    Notefy
+                    NOTEFY
                 </h1>
                 <button onClick={() => setExpanded(!Expanded)}>
                     <AiOutlineClose />
@@ -35,21 +36,21 @@ export default function Sidebar() {
             <div className="menuItemsContainer">
                 <div className="menuItem">
                     <button onClick={() => handleIconClick()}><AiFillHome /></button>
-                    <a href='#'>
+                    <Link to='#'>
                         Announcements
-                    </a>
+                    </Link>
                 </div>
                 <div className='menuItem'>
                     <button onClick={() => handleIconClick()}><MdCategory /></button>
-                    <a>
+                    <Link to={'#'}>
                         Notes
-                    </a>
+                    </Link>
                 </div>
                 <div className="menuItem">
                     <button onClick={() => handleIconClick()}><BiSupport /></button>
-                    <a href='#'>
+                    <Link to={'#'}>
                         Senior Support
-                    </a>
+                    </Link>
                 </div>
             </div>
             <div className="footer">

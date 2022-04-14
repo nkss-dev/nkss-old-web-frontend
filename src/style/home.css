@@ -1,0 +1,53 @@
+.homeCont{
+    width: 100%;
+}
+.homeCont .header{
+    /* border: 2px solid white; */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 3rem;
+}
+.homeCont .header h1{
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+.homeCont .header span{
+    font-weight: 700;
+    position: relative;
+    word-break: keep-all;
+}
+.homeCont .header img{
+    position: absolute;
+    width: 4rem;
+    bottom: -40%;
+}
+.homeCont .SignUpCont{
+    /* border: 2px solid white; */
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 1rem 0rem;
+    margin-bottom: 3rem;
+}
+.homeCont .signUp{
+    background-color: transparent;
+    border-radius: 8px;
+    border: 2px solid #7B61FF;
+    padding: 1rem 3rem;
+    color: #7B61FF;
+    font-size: 1.5;
+}
+.homeCont .signUp img{
+    width: 1.5rem;
+}
+.homeCont .cardsCont .row{
+    /* border: 2px solid white; */
+    align-items: center;
+    justify-content: space-evenly;
+    margin-left: 1rem;
+}
+.homeCont Link{
+    text-decoration: line-through;
+}
