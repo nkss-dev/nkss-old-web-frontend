@@ -5,7 +5,7 @@ import { GiHamburgerMenu } from 'react-icons/gi'
 import { MdCategory } from 'react-icons/md'
 import { BiSupport, BiLogOut } from 'react-icons/bi'
 import { FaUserCircle } from 'react-icons/fa'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 export default function Sidebar() {
 
@@ -17,10 +17,12 @@ export default function Sidebar() {
         }
     }
 
+    const navigate = useNavigate();
+
     return (
         <div className={`sidebar ${Expanded ? "" : "inactive"}`}>
             <div className="header">
-                <h1 className="brand">
+                <h1 onClick={()=> navigate('/')} className="brand">
                     NOTEFY
                 </h1>
                 <button onClick={() => setExpanded(!Expanded)}>
@@ -36,20 +38,20 @@ export default function Sidebar() {
             <div className="menuItemsContainer">
                 <div className="menuItem">
                     <button onClick={() => handleIconClick()}><AiFillHome /></button>
-                    <Link to='#'>
+                    <Link to='/announcements'>
                         Announcements
                     </Link>
                 </div>
                 <div className='menuItem'>
                     <button onClick={() => handleIconClick()}><MdCategory /></button>
-                    <Link to={'#'}>
+                    <Link to={'/notes'}>
                         Notes
                     </Link>
                 </div>
                 <div className="menuItem">
                     <button onClick={() => handleIconClick()}><BiSupport /></button>
-                    <Link to={'#'}>
-                        Senior Support
+                    <Link to={'/clubs'}>
+                        Clubs
                     </Link>
                 </div>
             </div>

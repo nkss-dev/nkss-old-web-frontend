@@ -3,15 +3,15 @@ import folder1 from '../assets/folder1.png'
 import folder2 from '../assets/folder2.png'
 import '../style/folderCard.css'
 
-function FolderCard() {
+function FolderCard(props) {
     return (
-        <div className='folderCard'>
+        <div onClick={()=> window.open(`https://drive.google.com/file/d/${props.link}`, '_blank')} className='folderCard'>
             <div className="imgCont">
                 <img src={folder2} alt="" />
                 <img className='shift' src={folder1} alt="" />
             </div>
             <p>
-                Lecture Notes.pdf
+                {props.desc}
             </p>
         </div>
     )

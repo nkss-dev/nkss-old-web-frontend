@@ -1,14 +1,14 @@
-import React from 'react'
 import {BsArrowRight} from 'react-icons/bs'
 import '../style/announcementNotoCard.css'
 
-function AnnouncementNotoCard() {
+function AnnouncementNotoCard(props) {
+
   return (
     <div className="announcementNotoCard">
         <p>
-        Notification and time slots of MCA for Mid Semester Exam-II for May-June-2022 Examination Session 
+        {props.desc}
         </p>
-        <button>
+        <button onClick={()=>window.open(props.link, '_blank')}>
             View <BsArrowRight/>
         </button>
     </div>

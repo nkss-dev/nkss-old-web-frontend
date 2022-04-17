@@ -1,8 +1,67 @@
-import React from 'react'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
 import '../style/announcement.css'
 import AnnouncementNotoCard from './AnnouncementNotoCard'
 
 function Announcements() {
+    const iniNoto = [
+        {
+            'name': '',
+            'link': '',
+            'tags': ''
+        }
+    ];
+    const [Noto, setNoto] = useState(iniNoto);
+    const [branch, setBranch] = useState("All Branches");
+    const [degree, setDegree] = useState("All Courses");
+
+    useEffect(() => {
+        try {
+            const fetchNoto = async () => {
+                const data = await axios.get('https://NKSS-backend-production-0380.up.railway.app/announcements');
+                // console.log('Data: ', data.data);
+                setNoto(data.data);
+            }
+            fetchNoto();
+        } catch (error) {
+            console.log('Error: ', error)
+        }
+    }, [])
+
+    useEffect(() => {
+        try {
+            const fetchNoto = async () => {
+                let data = await axios.get('https://NKSS-backend-production-0380.up.railway.app/announcements');
+                // console.log('data: ', data.data.filter((e)=> e.tags != null && e.tags.includes("B.Tech.")));
+                if (branch == "All Branches" && degree == "All Courses") {
+                    setNoto(data.data);
+                    // console.log(1, data);
+                }
+                else if (branch == "All Branches" && degree != "All Courses") {
+                    data = data.data.filter((e) => e.tags != null && e.tags.includes(degree));
+                    setNoto(data);
+                    // console.log(2, data);
+
+                }
+                else if (branch != "All Branches" && degree == "All Courses") {
+                    data = data.data.filter((e) => e.tags != null && e.tags.includes(branch));
+                    setNoto(data);
+                    // console.log(3, data);
+
+                }
+                else if (branch != "All Branches" && degree != "All Courses") {
+                    data = data.data.filter((e) => e.tags != null);
+                    data = data.data.filter((e) => e.tags.includes(degree) && e.tags.includes(branch))
+                    setNoto(data);
+                    // console.log(4, data);
+                }
+            }
+            fetchNoto();
+        } catch (error) {
+            console.log('Error: ', error)
+        }
+    }, [branch, degree])
+
     return (
         <div className="announcementCont container-fluid">
             <div className="header container">
@@ -12,30 +71,33 @@ function Announcements() {
             <div className="container partition">
             </div>
             <div className="filters container">
-                <select name="semester" id="semester">
-                    <option value="0">All Semesters</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                </select>
-                <select name="branch" id="branch">
+                <select onChange={(e) => setBranch(e.target.value)} name="branch" id="branch" defaultValue={"All Branches"}>
+                    <option value="All Branches">All Branches</option>
                     <option value="CS">CS</option>
                     <option value="IT">IT</option>
-                    <option value="ECE">ECE</option>
+                    <option value="EC">ECE</option>
                     <option value="EE">EE</option>
+                    <option value="ME">ME</option>
+                    <option value="PI">PIE</option>
+                    <option value="CE">Civil</option>
+                </select>
+                <select onChange={(e) => setDegree(e.target.value)} name="degree" id="degree" defaultValue={"All Courses"}>
+                    <option value="All Courses">All Courses</option>
+                    <option value="B.Tech.">B.Tech</option>
+                    <option value="M.Tech.">M.Tech</option>
+                    <option value="MCA">MCA</option>
                 </select>
             </div>
             <div className="notificationCont container">
                 <div className="row">
-                    <AnnouncementNotoCard className='col-1'/>
-                    <AnnouncementNotoCard className='col-1'/>
-                    <AnnouncementNotoCard className='col-1'/>
-                    <AnnouncementNotoCard className='col-1'/>
+                    {Noto.map((e) => {
+                        return (
+                            <>
+                                {e.name == '' ? '' :
+                                    <AnnouncementNotoCard desc={e.name} link={`${e.link}`} className='col-1' />}
+                            </>
+                        )
+                    })}
                 </div>
             </div>
         </div>
