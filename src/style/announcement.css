@@ -35,3 +35,6 @@
 .announcementCont .notificationCont{
     margin-top: 1rem;
 }
+.announcementCont .noNoto {
+    text-align: center;
+}

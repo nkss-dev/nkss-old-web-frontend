@@ -83,18 +83,11 @@ function Notes() {
                     <option value="ME">ME</option>
                     <option value="PI">PIE</option>
                     <option value="CE">Civil</option>
-
                 </select>
-                {/* <select name="subjectCode" id="subjectCode">
-                    <option value="ITPC20">ITPC20</option>
-                    <option value="ITPC21">ITPC21</option>
-                    <option value="ITPC22">ITPC22</option>
-                    <option value="ITPC23">ITPC23</option>
-                </select> */}
             </div>
             <div className="folderCont container">
                 <div className="row">
-                    {files.map((e) => {
+                    {files.length == 0 ? <h3 className='noNotes'>No Notes Found</h3> : files.map((e) => {
                         return (
                             <FolderCard desc={e.name} link={e.link} className='col-md-4' />
                         )

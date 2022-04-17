@@ -38,6 +38,7 @@
     white-space: nowrap;
     color: #7B61FF;
     font-weight: 700;
+    cursor: pointer;
 }
 .header button{
     background-color: transparent;

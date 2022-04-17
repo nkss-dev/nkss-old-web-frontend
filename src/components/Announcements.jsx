@@ -29,37 +29,42 @@ function Announcements() {
     }, [])
 
     useEffect(() => {
-        try {
-            const fetchNoto = async () => {
-                let data = await axios.get('https://NKSS-backend-production-0380.up.railway.app/announcements');
-                // console.log('data: ', data.data.filter((e)=> e.tags != null && e.tags.includes("B.Tech.")));
-                if (branch == "All Branches" && degree == "All Courses") {
-                    setNoto(data.data);
-                    // console.log(1, data);
-                }
-                else if (branch == "All Branches" && degree != "All Courses") {
+        const fetchNoto = async () => {
+            let data = await axios.get('https://NKSS-backend-production-0380.up.railway.app/announcements');
+            console.log('data: ', data.data);
+            if (branch == "All Branches" && degree == "All Courses") {
+                setNoto(data.data);
+            }
+            else if (branch == "All Branches" && degree != "All Courses") {
+                try {
                     data = data.data.filter((e) => e.tags != null && e.tags.includes(degree));
                     setNoto(data);
-                    // console.log(2, data);
-
-                }
-                else if (branch != "All Branches" && degree == "All Courses") {
-                    data = data.data.filter((e) => e.tags != null && e.tags.includes(branch));
-                    setNoto(data);
-                    // console.log(3, data);
-
-                }
-                else if (branch != "All Branches" && degree != "All Courses") {
-                    data = data.data.filter((e) => e.tags != null);
-                    data = data.data.filter((e) => e.tags.includes(degree) && e.tags.includes(branch))
-                    setNoto(data);
-                    // console.log(4, data);
+                } catch (error) {
+                    setNoto([]);
                 }
             }
-            fetchNoto();
-        } catch (error) {
-            console.log('Error: ', error)
+            else if (branch != "All Branches" && degree == "All Courses") {
+                try {
+                    data = data.data.filter((e) => e.tags != null && e.tags.includes(branch));
+                    setNoto(data);
+                } catch (error) {
+                    setNoto([]);
+                }
+            }
+            else if (branch != "All Branches" && degree != "All Courses") {
+                try {
+                    data = data.data.filter((e) => e.tags != null);
+                    data = data.filter((e) => e.tags.includes(degree));
+                    data = data.filter((e) => e.tags.includes(branch));
+                    // console.log(111)
+                    setNoto(data);
+                } catch (error) {
+                    console.log(error)
+                    setNoto([])
+                }
+            }
         }
+        fetchNoto();
     }, [branch, degree])
 
     return (
@@ -90,7 +95,7 @@ function Announcements() {
             </div>
             <div className="notificationCont container">
                 <div className="row">
-                    {Noto.map((e) => {
+                    {Noto.length == 0 ? <h3 className='noNoto'>No Notifications Available</h3> : Noto.map((e) => {
                         return (
                             <>
                                 {e.name == '' ? '' :
