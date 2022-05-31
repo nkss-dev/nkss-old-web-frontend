@@ -25,6 +25,11 @@
     font-size: 1.5rem;
     cursor: pointer;
 }
+
+#sideBar_heading{
+    color: #7B61FF;
+}
+
 .sidebar.inactive .hamburger{
     display: flex;
     align-items: center;
