@@ -1,4 +1,4 @@
-import { React, useEffect, useState } from 'react'
+import { React,  useState } from 'react'
 import '../style/sidebar.css'
 import { AiOutlineClose, AiFillHome } from 'react-icons/ai'
 import { GiHamburgerMenu } from 'react-icons/gi'
@@ -23,7 +23,7 @@ export default function Sidebar() {
         <div className={`sidebar ${Expanded ? "" : "inactive"}`}>
             <div className="header">
                 <h1 onClick={()=> navigate('/')} className="brand">
-                    NOTEFY
+                 <span id="sideBar_heading" onClick={() => setExpanded(!Expanded)}>NOTEFY </span>  
                 </h1>
                 <button onClick={() => setExpanded(!Expanded)}>
                     <AiOutlineClose />
@@ -38,19 +38,19 @@ export default function Sidebar() {
             <div className="menuItemsContainer">
                 <div className="menuItem">
                     <button onClick={() => handleIconClick()}><AiFillHome /></button>
-                    <Link to='/announcements'>
+                    <Link to='/announcements' onClick={() => setExpanded(!Expanded)}>
                         Announcements
                     </Link>
                 </div>
                 <div className='menuItem'>
                     <button onClick={() => handleIconClick()}><MdCategory /></button>
-                    <Link to={'/notes'}>
+                    <Link to={'/notes'} onClick={() => setExpanded(!Expanded)}>
                         Notes
                     </Link>
                 </div>
                 <div className="menuItem">
                     <button onClick={() => handleIconClick()}><BiSupport /></button>
-                    <Link to={'/clubs'}>
+                    <Link to={'/clubs'} onClick={() => setExpanded(!Expanded)}> 
                         Clubs
                     </Link>
                 </div>
