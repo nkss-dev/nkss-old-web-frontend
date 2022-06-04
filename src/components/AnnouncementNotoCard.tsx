@@ -1,7 +1,9 @@
 import {BsArrowRight} from 'react-icons/bs'
 import '../style/announcementNotoCard.css'
 
-function AnnouncementNotoCard(props) {
+
+//TODO: Define types for props
+function AnnouncementNotoCard(props: any) {
 
   return (
     <div className="announcementNotoCard">

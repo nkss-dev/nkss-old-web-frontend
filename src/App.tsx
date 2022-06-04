@@ -11,9 +11,9 @@ function App() {
       <div className="App">
         <Sidebar />
         <Routes>
-          <Route exact path='/' element={<Home />} />
-          <Route exact path='/announcements' element={<Announcements />} />
-          <Route exact path='/notes' element={<Notes />} />
+          <Route path='/' element={<Home />} />
+          <Route path='/announcements' element={<Announcements />} />
+          <Route path='/notes' element={<Notes />} />
         </Routes>
       </div>
     </BrowserRouter>

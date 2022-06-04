@@ -20,9 +20,9 @@ function Notes() {
         try {
             const fetchData = async () => {
                 let data = await axios.get('https://NKSS-drive-production-e005.up.railway.app/files');
-                setFiles(data.data.filter((e) => {
+                setFiles(data.data.filter((e: any) => {
                     let check = 0;
-                    e.tags.forEach(el => {
+                    e.tags.forEach( (el: any) => {
                         if (el.substring(7, 9) == branch && el.substring(11, 12) == year) {
                             check = 1;
                         }
@@ -42,9 +42,9 @@ function Notes() {
         try {
             const fetchData = async () => {
                 let data = await axios.get('https://NKSS-drive-production-e005.up.railway.app/files');
-                setFiles(data.data.filter((e) => {
+                setFiles(data.data.filter((e: any) => {
                     let check = 0;
-                    e.tags.forEach(el => {
+                    e.tags.forEach((el: any)  => {
                         if (el.substring(7, 9) == branch && el.substring(11, 12) == year) {
                             check = 1;
                         }
@@ -69,13 +69,13 @@ function Notes() {
             </div>
             <div className="partition container"></div>
             <div className="filters container">
-                <select onChange={(e) => setYear(e.target.value)} name="Year" id="Year">
+                <select onChange={(e: any) => setYear(e.target.value)} name="Year" id="Year">
                     <option value="1">1st Year</option>
                     <option value="2">2nd Year</option>
                     <option value="3">3rd Year</option>
                     <option value="4">4th Year</option>
                 </select>
-                <select onChange={(e) => setBranch(e.target.value)} name="branch" id="branch">
+                <select onChange={(e: any) => setBranch(e.target.value)} name="branch" id="branch">
                     <option value="CS">CS</option>
                     <option value="IT">IT</option>
                     <option value="EC">ECE</option>
@@ -87,7 +87,7 @@ function Notes() {
             </div>
             <div className="folderCont container">
                 <div className="row">
-                    {files.length == 0 ? <h3 className='noNotes'>No Notes Found</h3> : files.map((e) => {
+                    {files.length === 0 ? <h3 className='noNotes'>No Notes Found</h3> : files.map((e: any) => {
                         return (
                             <FolderCard desc={e.name} link={e.link} className='col-md-4' />
                         )

@@ -5,6 +5,9 @@ import img3 from '../assets/3.png'
 import img4 from '../assets/4.png'
 import Group from '../assets/Group.png'
 import vector from '../assets/Vector.png'
+
+
+
 function NotesCard() {
     return (
         <div className="homeCardCont notesCard">

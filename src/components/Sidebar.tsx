@@ -1,4 +1,4 @@
-import { React,  useState } from 'react'
+import  React, { useState } from 'react'
 import '../style/sidebar.css'
 import { AiOutlineClose, AiFillHome } from 'react-icons/ai'
 import { GiHamburgerMenu } from 'react-icons/gi'
