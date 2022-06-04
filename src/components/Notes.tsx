@@ -22,30 +22,8 @@ function Notes() {
                 let data = await axios.get('https://NKSS-drive-production-e005.up.railway.app/files');
                 setFiles(data.data.filter((e: any) => {
                     let check = 0;
-                    e.tags.forEach( (el: any) => {
-                        if (el.substring(7, 9) == branch && el.substring(11, 12) == year) {
-                            check = 1;
-                        }
-                    });
-                    return (
-                        check
-                    )
-                }));
-            }
-            fetchData();
-        } catch (error) {
-            console.log('Error: ', error)
-        }
-    }, [])
-
-    useEffect(() => {
-        try {
-            const fetchData = async () => {
-                let data = await axios.get('https://NKSS-drive-production-e005.up.railway.app/files');
-                setFiles(data.data.filter((e: any) => {
-                    let check = 0;
                     e.tags.forEach((el: any)  => {
-                        if (el.substring(7, 9) == branch && el.substring(11, 12) == year) {
+                        if (el.substring(7, 9) === branch && el.substring(11, 12) === year) {
                             check = 1;
                         }
                     });

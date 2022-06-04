@@ -57,7 +57,7 @@ function Announcements() {
                     arr = arr.filter((e: any) => e.tags.includes(degree));
                     arr = arr.filter((e: any) => e.tags.includes(branch));
                     // console.log(111)
-                    setNoto(data);
+                    setNoto(arr);
                 } catch (error) {
                     console.log(error)
                     setNoto([])
