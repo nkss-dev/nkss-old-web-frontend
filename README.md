@@ -21,6 +21,7 @@ npm install
 npm run start
 ```
 The above command will start the app locally on your system with a webpack server running on port ```3000```
+
 5. To get a production build of the app, you can run
 ```shell
 npm run build
