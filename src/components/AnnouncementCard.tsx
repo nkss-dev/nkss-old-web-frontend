@@ -1,6 +1,6 @@
-import React from 'react'
-import '../style/homeCard.css'
-import img from '../assets/1.png'
+import React from "react";
+import "../style/homeCard.scss";
+import img from "../assets/1.png";
 
 function AnnouncementCard() {
   return (
@@ -9,15 +9,11 @@ function AnnouncementCard() {
         <img src={img} alt="" />
       </div>
       <div className="bottom">
-        <h1>
-          Announcements
-        </h1>
-        <p>
-          Stay updated with latest college announcement
-        </p>
+        <h1>Announcements</h1>
+        <p>Stay updated with latest college announcement</p>
       </div>
     </div>
-  )
+  );
 }
 
-export default AnnouncementCard
+export default AnnouncementCard;
