@@ -4,6 +4,7 @@ import Announcements from "./components/Announcements";
 import Home from "./components/Home";
 import Notes from "./components/Notes";
 import Sidebar from "./components/Sidebar";
+import Login from "./components/Login/Login";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/announcements" element={<Announcements />} />
           <Route path="/notes" element={<Notes />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </div>
     </BrowserRouter>
