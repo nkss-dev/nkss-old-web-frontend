@@ -1,0 +1,49 @@
+.cardContainer {
+  border-radius: 15px;
+  width: 400px;
+  height: 200px;
+  // background: #2F3136;
+  background-color: #000 ; 
+  margin: 6px; 
+}
+
+.namingSection {
+  display: flex;
+  flex-direction: row;
+}
+
+.clubLogoContainer {
+
+}
+
+.clubLogo {
+  width: 64px;
+  height: 64px;
+}
+
+.clubNameContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-left: 12px;
+}
+
+.alias {
+
+}
+
+.completeName {
+
+}
+
+.clubDescriptionContainer {
+  padding: 12px;
+}
+
+.socialHandles {
+  padding: 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
