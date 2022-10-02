@@ -1,0 +1,43 @@
+.clubFullPageContainer {
+
+}
+
+.clubName {
+  text-align: center;
+  font-size: 64px;
+  font-weight: 600;
+  color: #0CBC8B;
+  line-height: 96px ;
+
+}
+
+.clubImageContainer {
+  text-align: center;
+}
+
+.clubImage {
+  border-radius: 17.5px;
+  height: 351px;
+  width: 1091px;
+
+}
+
+.clubDescription {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.clubLeaders {
+
+}
+
+.holdersList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 12px;
+}
+
+.postHolderCardDiv {
+  margin: 24px;
+}
