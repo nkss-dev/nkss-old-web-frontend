@@ -3,7 +3,7 @@ import "../style/home.scss";
 import AnnouncementCard from "./AnnouncementCard";
 import rightArrow from "../assets/rightArrow.png";
 import underline from "../assets/underline.png";
-import NotesCard from "./NotesCard";
+import CoursesCard from "./CoursesCard";
 import ClubsCard from "./ClubsCard";
 import { useNavigate } from "react-router-dom";
 
@@ -35,8 +35,8 @@ function Home() {
           <div onClick={() => navigate("/announcements")} className="col-md-3">
             <AnnouncementCard />
           </div>
-          <div onClick={() => navigate("/notes")} className="col-md-3">
-            <NotesCard />
+          <div onClick={() => navigate("/courses")} className="col-md-3">
+            <CoursesCard />
           </div>
           <div className="col-md-3">
             <ClubsCard />

@@ -6,7 +6,7 @@ import img4 from "../assets/4.png";
 import Group from "../assets/Group.png";
 import vector from "../assets/Vector.png";
 
-function NotesCard() {
+function CoursesCard() {
   return (
     <div className="homeCardCont notesCard">
       <div className="imgCont">
@@ -19,11 +19,11 @@ function NotesCard() {
         <img className="img4" src={img4} alt="" />
       </div>
       <div className="bottom">
-        <h1>Notes</h1>
-        <p>Stay prepared for all exams with up to date notes.</p>
+        <h1>Courses</h1>
+        <p>Get details of your next courses.</p>
       </div>
     </div>
   );
 }
 
-export default NotesCard;
+export default CoursesCard;
