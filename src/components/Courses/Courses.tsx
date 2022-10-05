@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Course } from "../../types/course";
+import CourseCard from "./CourseCard";
 import "./courses.scss";
 
 const Courses = () => {
@@ -13,7 +14,13 @@ const Courses = () => {
     });
   };
 
-  return <div></div>;
+  return (
+    <div>
+      <div>
+        <CourseCard />
+      </div>
+    </div>
+  );
 };
 
 export default Courses;

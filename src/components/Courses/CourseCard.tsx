@@ -4,13 +4,11 @@ import "./CourseCard.scss";
 
 const CourseCard = () => {
   return (
-    <div>
-      <div>Course Code: Course Title</div>
-      <button>
+    <div className="courseCardContainer">
+      <div className="courseName">Course Code: Course Title</div>
+      <button className="viewCourseButton">
         View
-        <span>
-          <BsArrowRight />
-        </span>
+        <BsArrowRight />
       </button>
     </div>
   );
