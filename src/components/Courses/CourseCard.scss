@@ -1,0 +1,34 @@
+.courseCardContainer {  
+  width: 1502px;
+  height: 133.79px;
+  background: #FFFFFF;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.25);
+  border-radius: 24px;
+  color: #000;
+  display: flex;
+}
+
+.courseName {
+  font-weight: 600;
+  font-size: 26.1053px;
+  line-height: 39px;
+  color: #292A2E;width: 1179px;
+  height: 78px;
+  left: 0px;
+  top: 0px;
+}
+
+.viewCourseButton {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 24.8947px 48.2807px;
+  gap: 7.54px;
+
+  width: 214.51px;
+  height: 85.79px;
+
+  background: #7B61FF;
+  border-radius: 12.0702px;
+}
