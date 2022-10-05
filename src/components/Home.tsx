@@ -38,7 +38,7 @@ function Home() {
           <div onClick={() => navigate("/courses")} className="col-md-3">
             <CoursesCard />
           </div>
-          <div className="col-md-3">
+          <div onClick={() => navigate("/clubs")} className="col-md-3">
             <ClubsCard />
           </div>
         </div>
