@@ -39,16 +39,16 @@ export default function Sidebar() {
           <button onClick={() => handleIconClick()}>
             <AiFillHome />
           </button>
-          <Link to="/announcements" onClick={() => setExpanded(!Expanded)}>
+          {/* <Link to="/announcements" onClick={() => setExpanded(!Expanded)}>
             Announcements
-          </Link>
+          </Link> */}
         </div>
         <div className="menuItem">
           <button onClick={() => handleIconClick()}>
             <MdCategory />
           </button>
-          <Link to={"/notes"} onClick={() => setExpanded(!Expanded)}>
-            Notes
+          <Link to={"/courses"} onClick={() => setExpanded(!Expanded)}>
+            Courses
           </Link>
         </div>
         <div className="menuItem">
