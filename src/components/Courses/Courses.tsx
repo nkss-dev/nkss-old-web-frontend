@@ -2,6 +2,7 @@ import * as React from "react";
 import { Course } from "../../types/course";
 import CourseCard from "./CourseCard";
 import "./courses.scss";
+import CourseSearchBar from "./CourseSearchBar";
 
 const Courses = () => {
   const [courses, setCourses] = React.useState([]);
@@ -16,7 +17,17 @@ const Courses = () => {
 
   return (
     <div>
+      <div className="headingConatiner"> Courses </div>
       <div>
+        <CourseSearchBar />
+      </div>
+      <div>
+        <CourseCard />
+        <CourseCard />
+        <CourseCard />
+        <CourseCard />
+        <CourseCard />
+        <CourseCard />
         <CourseCard />
       </div>
     </div>
