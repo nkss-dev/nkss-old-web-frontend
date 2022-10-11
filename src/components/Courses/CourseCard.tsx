@@ -2,10 +2,12 @@ import * as React from "react";
 import { BsArrowRight } from "react-icons/bs";
 import "./CourseCard.scss";
 
-const CourseCard = () => {
+const CourseCard = (props: any) => {
   return (
     <div className="courseCardContainer">
-      <div className="courseName">Course Code: Course Title</div>
+      <div className="courseName">
+        {props.code}: {props.title}
+      </div>
       <button className="viewCourseButton">
         View
         <BsArrowRight />

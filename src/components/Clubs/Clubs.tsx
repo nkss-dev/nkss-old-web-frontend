@@ -32,10 +32,7 @@ const Clubs = () => {
       <div className="clubsList">
         {clubs.map((club) => {
           return (
-            <Link
-              to={`/clubs/${club.name}`}
-              //style={{ textDecoration: "none" }}
-            >
+            <Link to={`/clubs/${club.name}`}>
               <ClubCard
                 name={club.name}
                 description={club.description}

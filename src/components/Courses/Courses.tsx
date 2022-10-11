@@ -1,11 +1,12 @@
 import * as React from "react";
 import { Course } from "../../types/course";
 import CourseCard from "./CourseCard";
+import Axios from "axios";
 import "./courses.scss";
 import CourseSearchBar from "./CourseSearchBar";
 
 const Courses = () => {
-  const [courses, setCourses] = React.useState([]);
+  const [courses, setCourses] = React.useState<any[]>([]);
   const [filteredCourses, setFilteredCourses] = React.useState([]);
 
   const getSearch = (query: string) => {
@@ -15,6 +16,25 @@ const Courses = () => {
     });
   };
 
+  React.useEffect(() => {
+    try {
+      Axios({
+        method: "GET",
+        url: "/courses",
+        headers: {
+          Authorization:
+            "Bearer " +
+            `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic3R1ZGVudCIsInJvbGxubyI6IjEyMDIyMDA1In0.9Btng_hYvKwIjeYS88zAolwiKfuRJE4Q71LMT_lK9jI`,
+        },
+        withCredentials: true,
+      }).then((res: any) => {
+        setCourses([...res.data.data]);
+      });
+    } catch (err) {
+      alert(err);
+    }
+  }, []);
+
   return (
     <div>
       <div className="headingConatiner"> Courses </div>
@@ -22,13 +42,9 @@ const Courses = () => {
         <CourseSearchBar />
       </div>
       <div>
-        <CourseCard />
-        <CourseCard />
-        <CourseCard />
-        <CourseCard />
-        <CourseCard />
-        <CourseCard />
-        <CourseCard />
+        {courses.map((course: any) => {
+          return <CourseCard code={course.code} title={course.title} />;
+        })}
       </div>
     </div>
   );

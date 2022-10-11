@@ -11,17 +11,15 @@ function Announcements() {
       tags: "",
     },
   ];
-  const [Noto, setNoto] = useState<any>(iniNoto);
+  const [Noto, setNoto] = useState<any[]>(iniNoto);
   const [branch, setBranch] = useState<any>("All Branches");
   const [degree, setDegree] = useState<any>("All Courses");
 
   useEffect(() => {
     try {
       const fetchNoto = async () => {
-        const data = await axios.get(
-          "https://NKSS-backend-production-0380.up.railway.app/announcements"
-        );
-        // console.log('Data: ', data.data);
+        const data = await axios.get("http://localhost:8081/announcements");
+        console.log("Data: ", data.data);
         setNoto(data.data);
       };
       fetchNoto();
@@ -32,9 +30,7 @@ function Announcements() {
 
   useEffect(() => {
     const fetchNoto = async () => {
-      let data = await axios.get(
-        "https://NKSS-backend-production-0380.up.railway.app/announcements"
-      );
+      let data = await axios.get("http://localhost:8081/announcements");
       console.log("data: ", data.data);
       if (branch === "All Branches" && degree === "All Courses") {
         setNoto(data.data);
