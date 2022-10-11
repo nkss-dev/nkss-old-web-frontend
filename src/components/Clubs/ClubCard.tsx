@@ -1,9 +1,24 @@
-import * as React from "react";
-import { FaDiscord, FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
+import React, { useEffect, useState } from "react";
+import {
+  FaDiscord,
+  FaFacebook,
+  FaInstagram,
+  FaLinkedin,
+  FaQuora,
+} from "react-icons/fa";
 import "./ClubCard.scss";
 import logo from "../../assets/logo.svg";
 
-const ClubCard = () => {
+const ClubCard = (props: any) => {
+  const { name, description, socials } = props;
+  // const [name, setName] = useState(props.name);
+  // const [description, setDescription] = useState(props.description);
+  // const [discordLink, setDiscordLink] = useState(props.socials.discord);
+  // const [facebookLink, setFacebookLink] = useState(props.socials.facebook);
+  // const [linkedinLink, setLinkedinLink] = useState(props.socials.linkedin);
+  // const [instagramLink, setInstagramLink] = useState(props.socials.instagram);
+  // const [quoraLink, setQuoraLink] = useState(props.socials.quora);
+
   return (
     <div className="cardContainer">
       <div className="namingSection">
@@ -12,29 +27,73 @@ const ClubCard = () => {
           <img src={logo} alt="club logo" className="clubLogo" />
         </div>
         <div className="clubNameContainer">
-          <div className="alias"> ELAD </div>
+          <div className="alias"> {name} </div>
           {/* <div className="completeName">English Literary and Debating Club</div> */}
         </div>
       </div>
       <div className="clubDescriptionContainer">
         {/**description */}
-        "Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's ."
+        {/* "Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry. Lorem Ipsum has been the industry's ." */}
+        {description}
       </div>
       <div className="socialHandles">
         {/**socials */}
-        <div>
-          <FaDiscord />
-        </div>
-        <div>
-          <FaFacebook />
-        </div>
-        <div>
-          <FaInstagram />
-        </div>
-        <div>
-          <FaLinkedin />
-        </div>
+        {socials.discord ? (
+          <div
+            onClick={() => {
+              window.location.href = `${socials.discord}`;
+            }}
+          >
+            <FaDiscord />
+          </div>
+        ) : (
+          <></>
+        )}
+        {socials.facebook ? (
+          <div
+            onClick={() => {
+              window.location.href = `${socials.facebook}`;
+            }}
+          >
+            <FaFacebook />
+          </div>
+        ) : (
+          <></>
+        )}
+        {socials.instagram ? (
+          <div
+            onClick={() => {
+              window.location.href = `${socials.instagram}`;
+            }}
+          >
+            <FaInstagram />
+          </div>
+        ) : (
+          <></>
+        )}
+        {socials.linkedin ? (
+          <div
+            onClick={() => {
+              window.location.href = `${socials.linkedin}`;
+            }}
+          >
+            <FaLinkedin />
+          </div>
+        ) : (
+          <></>
+        )}
+        {socials.quora ? (
+          <div
+            onClick={() => {
+              window.location.href = `${socials.quora}`;
+            }}
+          >
+            <FaQuora />
+          </div>
+        ) : (
+          <></>
+        )}
       </div>
     </div>
   );

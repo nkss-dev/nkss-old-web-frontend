@@ -3,9 +3,10 @@ import logo from "../../assets/clubImage.svg";
 import PostHolderCard from "./PostHolderCard";
 import "./ClubPage.scss";
 
-const ClubPage = () => {
+const ClubPage = (props: any) => {
   return (
     <div className="clubFullPageContainer">
+      {/* <div> {props.match.params.id} </div> */}
       <div className="clubName"> Technobyte </div>
       <div className="clubImageContainer">
         <img className="clubImage" src={logo} alt="club logo" />
