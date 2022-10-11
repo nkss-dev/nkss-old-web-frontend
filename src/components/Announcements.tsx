@@ -1,4 +1,4 @@
-import axios from "axios";
+import Axios from "axios";
 import React, { useEffect, useState } from "react";
 import "../style/announcement.scss";
 import AnnouncementNotoCard from "./AnnouncementNotoCard";
@@ -18,10 +18,22 @@ function Announcements() {
   useEffect(() => {
     try {
       const fetchNoto = async () => {
-        const data = await axios.get("http://localhost:8081/announcements");
-        console.log("Data: ", data.data);
-        setNoto(data.data.data);
-        console.log("noto: ", Noto);
+        try {
+          Axios({
+            method: "GET",
+            url: "/announcements",
+            headers: {
+              Authorization:
+                "Bearer " +
+                `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic3R1ZGVudCIsInJvbGxubyI6IjEyMDIyMDA1In0.9Btng_hYvKwIjeYS88zAolwiKfuRJE4Q71LMT_lK9jI`,
+            },
+            withCredentials: true,
+          }).then((res: any) => {
+            setNoto(res.data.data);
+          });
+        } catch (err) {
+          alert(err);
+        }
       };
       fetchNoto();
       setIsLoading(false);
