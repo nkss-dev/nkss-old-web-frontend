@@ -6,7 +6,11 @@ const PostHolderCard = (props: any) => {
   return (
     <div className="postHolderCardContainer">
       <div className="postHolderImageContainer">
-        <img className="postHolderImage" src={logo} alt={`postHolderName`} />
+        {props.noLogo === true ? (
+          <></>
+        ) : (
+          <img className="postHolderImage" src={logo} alt={`postHolderName`} />
+        )}
         <div className="postHolderName">
           {" "}
           {props.name ? props.name : "John Doe"}{" "}

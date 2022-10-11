@@ -38,7 +38,7 @@ const ClubPage = (props: any) => {
   return (
     <>
       {!clubData ? (
-        <> </>
+        <> Loading...</>
       ) : (
         <div className="clubFullPageContainer">
           <div> {id} </div>
