@@ -3,7 +3,7 @@ import logo from "../../assets/clubImage.svg";
 //import PostHolderCard from "./PostHolderCard";
 import "./CoursePage.scss";
 
-const ClubPage = (props: any) => {
+const CoursePage = (props: any) => {
   return (
     <div className="clubFullPageContainer">
       {/* <div> {props.match.params.id} </div> */}
@@ -46,4 +46,4 @@ const ClubPage = (props: any) => {
   );
 };
 
-export default ClubPage;
+export default CoursePage;
