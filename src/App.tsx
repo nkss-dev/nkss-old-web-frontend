@@ -22,10 +22,7 @@ function App() {
             {/* <Route path="/login" element={<Login />} /> */}
             <Route path="/clubs" element={<Clubs />} />
             <Route path="/courses" element={<Courses />} />
-            {/* <Route
-              path="/clubs/:id"
-              render={({ match: any }) => <ClubPage id={match.params.id} />}
-            /> */}
+            <Route path="/clubs/:id" element={<ClubPage />} />
           </Routes>
         </div>
       </div>

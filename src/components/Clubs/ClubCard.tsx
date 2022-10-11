@@ -11,13 +11,6 @@ import logo from "../../assets/logo.svg";
 
 const ClubCard = (props: any) => {
   const { name, description, socials } = props;
-  // const [name, setName] = useState(props.name);
-  // const [description, setDescription] = useState(props.description);
-  // const [discordLink, setDiscordLink] = useState(props.socials.discord);
-  // const [facebookLink, setFacebookLink] = useState(props.socials.facebook);
-  // const [linkedinLink, setLinkedinLink] = useState(props.socials.linkedin);
-  // const [instagramLink, setInstagramLink] = useState(props.socials.instagram);
-  // const [quoraLink, setQuoraLink] = useState(props.socials.quora);
 
   return (
     <div className="cardContainer">
