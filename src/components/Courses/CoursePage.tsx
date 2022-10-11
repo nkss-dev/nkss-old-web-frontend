@@ -54,7 +54,7 @@ const CoursePage = (props: any) => {
               Lorem Ipsum. */}
               <ReactMarkdown>{courseData.content}</ReactMarkdown>
             </div>
-            <div className="clubLeaders">
+            <div className="courseObjectives">
               <h3> Course objectives </h3>
               <div>
                 {courseData.objectives.map((book: any) => {
@@ -62,7 +62,7 @@ const CoursePage = (props: any) => {
                 })}
               </div>
             </div>
-            <div className="clubLeaders">
+            <div className="courseOutcomes">
               <h3> Course outcomes </h3>
               <div>
                 {courseData.outcomes.map((book: any) => {
@@ -70,7 +70,7 @@ const CoursePage = (props: any) => {
                 })}
               </div>
             </div>
-            <div className="clubLeaders">
+            <div className="recommendedCourseBooks">
               <h3> Recommended Books </h3>
               <div className="holdersList">
                 {courseData.book_names.map((book: any) => {
