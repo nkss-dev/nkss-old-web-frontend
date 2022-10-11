@@ -16,6 +16,8 @@ const Courses = () => {
     });
   };
 
+  //TODO: implement the funcitonality to filter courses using the getSearch func
+
   React.useEffect(() => {
     try {
       Axios({
