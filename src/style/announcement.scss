@@ -38,3 +38,21 @@
 .announcementCont .noNoto {
     text-align: center;
 }
+
+.announcement {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.announcementDate {
+    color:black;
+    margin-right: 2px ;
+
+}
+
+.announcementDesc {
+    color:black;
+    margin-left: 12px;
+}
