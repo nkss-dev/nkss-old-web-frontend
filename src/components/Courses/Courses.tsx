@@ -23,11 +23,6 @@ const Courses = () => {
       Axios({
         method: "GET",
         url: "/courses",
-        headers: {
-          Authorization:
-            "Bearer " +
-            `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic3R1ZGVudCIsInJvbGxubyI6IjEyMDIyMDA1In0.9Btng_hYvKwIjeYS88zAolwiKfuRJE4Q71LMT_lK9jI`,
-        },
         withCredentials: true,
       }).then((res: any) => {
         setCourses([...res.data.data]);
