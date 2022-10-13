@@ -4,17 +4,12 @@ import "../style/announcement.scss";
 import AnnouncementNotoCard from "./AnnouncementNotoCard";
 
 function Announcements() {
-  const iniNoto = [
-    {
-      name: "",
-      link: "",
-      tags: "",
-    },
-  ];
+  const iniNoto: any[] = [];
   const [Noto, setNoto] = useState<any[]>(iniNoto);
   const [branch, setBranch] = useState<any>("All Branches");
   const [degree, setDegree] = useState<any>("All Courses");
   const [isLoading, setIsLoading] = useState<boolean>(true);
+  // const [displayAnnouncements, setDisplayAnnouncements] = useState<any[]>(iniNoto);
   useEffect(() => {
     try {
       const fetchNoto = async () => {
@@ -22,14 +17,10 @@ function Announcements() {
           Axios({
             method: "GET",
             url: "/announcements",
-            headers: {
-              Authorization:
-                "Bearer " +
-                `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic3R1ZGVudCIsInJvbGxubyI6IjEyMDIyMDA1In0.9Btng_hYvKwIjeYS88zAolwiKfuRJE4Q71LMT_lK9jI`,
-            },
             withCredentials: true,
           }).then((res: any) => {
             setNoto(res.data.data);
+            // setDisplayAnnouncements(Noto.slice(Noto.length-30, Noto.length));
           });
         } catch (err) {
           alert(err);
@@ -128,17 +119,19 @@ function Announcements() {
           <div className="notificationCont container">
             <div className="row">
               {Noto.length === 0 ? (
-                <h3 className="noNoto">No Notifications Available</h3>
+                // <h3 className="noNoto"> No notifications available </h3>
+                <h3 className="noNoto">Loading ...</h3>
               ) : (
                 <>
                   {Noto.map((e: any) => {
                     return (
                       <>
-                        {e.name === "" ? (
+                        {e.title === "" ? (
                           ""
-                        ) : (
+                        ) : Noto.length === 0 ? <> Loading </> : (
                           <AnnouncementNotoCard
-                            desc={e.name}
+                            date={e.date}
+                            desc={e.title}
                             link={`${e.link}`}
                             className="col-1"
                           />
@@ -146,6 +139,7 @@ function Announcements() {
                       </>
                     );
                   })}
+                  
                 </>
               )}
             </div>

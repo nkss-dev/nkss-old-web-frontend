@@ -5,7 +5,10 @@ import "../style/announcementNotoCard.scss";
 function AnnouncementNotoCard(props: any) {
   return (
     <div className="announcementNotoCard">
-      <p>{props.desc}</p>
+      <div className="announcement">
+        <div className="announcementDate"> [{props.date}]: </div>
+        <div className="announcementDesc"> {props.desc}</div>
+      </div>
       <button onClick={() => window.open(props.link, "_blank")}>
         View <BsArrowRight />
       </button>
