@@ -9,6 +9,7 @@ import Clubs from "./components/Clubs/Clubs";
 import Courses from "./components/Courses/Courses";
 import ClubPage from "./components/Clubs/ClubPage";
 import CoursePage from "./components/Courses/CoursePage";
+import AboutUs from "./components/AboutUs/AboutUs";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <div>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/about" element={<AboutUs />} />
             <Route path="/announcements" element={<Announcements />} />
             {/* <Route path="/notes" element={<Notes />} /> */}
             {/* <Route path="/login" element={<Login />} /> */}

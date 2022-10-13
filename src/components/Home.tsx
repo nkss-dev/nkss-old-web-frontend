@@ -5,7 +5,7 @@ import rightArrow from "../assets/rightArrow.png";
 import underline from "../assets/underline.png";
 import CoursesCard from "./CoursesCard";
 import ClubsCard from "./ClubsCard";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Home() {
   const navigate = useNavigate();
@@ -26,9 +26,11 @@ function Home() {
         </p>
       </div>
       <div className="SignUpCont">
-        <button className="signUp">
-          Sign Up <img src={rightArrow} alt="" />
-        </button>
+        <Link to="/about">
+          <button className="signUp">
+            About Us <img src={rightArrow} alt="" />
+          </button>
+        </Link>
       </div>
       <div className="cardsCont container">
         <div className="row">
