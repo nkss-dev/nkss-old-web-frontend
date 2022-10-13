@@ -10,7 +10,7 @@ function ClubsCard() {
       </div>
       <div className="bottom">
         <h1>Clubs</h1>
-        <p>Stay updated with latest college announcement</p>
+        <p>Huh? What are clubs?? Sorry, never heard</p>
       </div>
     </div>
   );

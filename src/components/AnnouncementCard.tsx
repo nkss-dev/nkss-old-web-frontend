@@ -10,7 +10,7 @@ function AnnouncementCard() {
       </div>
       <div className="bottom">
         <h1>Announcements</h1>
-        <p>Stay updated with latest college announcement</p>
+        <p>Aaaah, not the exam results! Not NOW!!</p>
       </div>
     </div>
   );

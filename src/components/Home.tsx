@@ -12,17 +12,11 @@ function Home() {
   return (
     <div className="homeCont container-fluid">
       <div className="header container">
-        <h1>NOTEFY</h1>
+        <h1>NKSSS</h1>
         <p>
-          The senior you always wanted. Stay updated with latest and relevant
-          announcements with one-click away. Want best notes for exam
-          preparation
-          <br />{" "}
-          <span>
-            {" "}
-            <img src={underline} alt="" />
-            -Done!
-          </span>
+          Welcome! The NKSSS team aims to solve as many issues you face in our college as technologically possible!
+          The following 3 options are ones that we're currently actively developing.
+          This website is currently under development and you will be notified once its full release rolls around!
         </p>
       </div>
       <div className="SignUpCont">

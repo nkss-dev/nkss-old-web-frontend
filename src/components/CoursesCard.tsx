@@ -20,7 +20,7 @@ function CoursesCard() {
       </div>
       <div className="bottom">
         <h1>Courses</h1>
-        <p>Get details of your next courses.</p>
+        <p>Do we even learn something in these courses?</p>
       </div>
     </div>
   );
