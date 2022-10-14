@@ -12,7 +12,7 @@ function Home() {
   return (
     <div className="homeCont container-fluid">
       <div className="header container">
-        <h1>NKSSS</h1>
+        <h1>NIT-KKR Student Support System</h1>
         <p>
           Welcome! The NKSSS team aims to solve as many issues you face in our college as technologically possible!
           The following 3 options are ones that we're currently actively developing.
