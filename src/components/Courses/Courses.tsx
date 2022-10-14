@@ -44,10 +44,12 @@ const Courses = () => {
       ) : (
         <div className="announcementCont container-fluid">
           <div className="header container">
-            <h1>Announcements</h1>
+            <h1>Courses</h1>
             <p>
-              Stay updated with latest college announcement. Filter unwanted
-              announcements as per your discipline.
+              This page will soon (with the v1 release) display as many
+              of the 400+ courses that our college offers for their B. Tech. degree.
+              <br></br><br></br>
+              The filters will also be fixed before the v1 release.
             </p>
           </div>
           <div className="container partition"></div>

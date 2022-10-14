@@ -83,8 +83,12 @@ function Announcements() {
           <div className="header container">
             <h1>Announcements</h1>
             <p>
-              Stay updated with latest college announcement. Filter unwanted
-              announcements as per your discipline.
+              For now, this page fetches announcements from&nbsp;
+              <a href="http://nitkkr.ac.in/sub_courses.php?id=80">here</a>.
+              <br></br><br></br>
+              In the future, this will be converted into a <em><strong>notice board</strong></em> which
+              will not only display academic notifications, but also events of
+              clubs, societies, and more.
             </p>
           </div>
           <div className="container partition"></div>
