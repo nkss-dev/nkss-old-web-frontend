@@ -1,0 +1,49 @@
+.courseFullPageContainer .header{
+    border-bottom: 0.25px solid gray;
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+    text-align: left;
+}
+.courseFullPageContainer h1{
+    font-size: 4rem;
+    font-weight: 700;
+}
+.courseFullPageContainer h2{
+    font-size: 3rem;
+    font-weight: 700;
+}
+.courseDetails{
+    margin-top: 2rem;
+    ul{
+        font-size: 1rem;
+    }
+}
+.courseDetails>li, .left {
+    font-size: 1.5rem;
+    list-style: none;
+    strong {
+        color: cadetblue;
+    }
+}
+.courseBasic {
+    min-width: 100%;
+    .left {
+        vertical-align: top;
+        text-align: left;
+    }
+    .right {
+        vertical-align: top;
+        text-align: right;
+    }
+}
+.creditTable {
+    float: right;
+    border-collapse: collapse;
+    text-align: center;
+    border-style: double;
+    td, th {
+        border: 1px dashed #999;
+        padding: 0.5rem;
+    }
+}

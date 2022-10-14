@@ -84,7 +84,6 @@ const Courses = () => {
           <div className="notificationCont container">
             <div className="row">
               {courses.length === 0 ? (
-                // <h3 className="noNoto"> No notifications available </h3>
                 <h3 className="noNoto">Loading ...</h3>
               ) : (
                 <>
@@ -99,7 +98,7 @@ const Courses = () => {
                           <AnnouncementNotoCard
                             date={e.code}
                             desc={e.title}
-                            link={`https://nksss.live/courses/${e.code}`}
+                            link={`/courses/${e.code}`}
                             className="col-1"
                           />
                         )}

@@ -1,11 +1,8 @@
 import * as React from "react";
 import { useParams } from "react-router-dom";
-import logo from "../../assets/clubImage.svg";
 import Axios from "axios";
 import ReactMarkdown from "react-markdown";
-//import PostHolderCard from "./PostHolderCard";
 import "./CoursePage.scss";
-import PostHolderCard from "../Clubs/PostHolderCard";
 
 const CoursePage = (props: any) => {
   const { id } = useParams();
@@ -17,7 +14,6 @@ const CoursePage = (props: any) => {
         url: `/courses/${id}`,
         withCredentials: true,
       }).then((res: any) => {
-        console.log(res.data.data);
         setCourseData(res.data.data);
       });
     } catch (err) {
@@ -29,51 +25,97 @@ const CoursePage = (props: any) => {
       {!courseData ? (
         <>Loading...</>
       ) : (
-        <div className="clubFullPageContainer">
-          <div className="clubName">
-            {" "}
-            {courseData.code}: {courseData.title}{" "}
+        <div className="courseFullPageContainer">
+          <div className="header container">
+            <h1>
+              {courseData.title}
+            </h1>
+            <p>
+              This page will soon contain a link to notes, past papers and reference books.
+            </p>
           </div>
-          <div className="clubImageContainer">
-            <img className="clubImage" src={logo} alt="club logo" />
-            <div className="clubDescription">
-              {/* Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was
-              popularised in the 1960s with the release of Letraset sheets
-              containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of
-              Lorem Ipsum. */}
-              <ReactMarkdown>{courseData.content}</ReactMarkdown>
+
+          <div className="courseDetails container">
+            <div className="courseBasic">
+              <table>
+                <tr>
+                  <td className="left">
+                    <li>
+                      <strong>Course Code:</strong> {courseData.code}
+                    </li>
+                    <li>
+                      <strong>Prerequisites:</strong> {courseData.prereq ? courseData.prereq : "None"}
+                    </li>
+                    <li>
+                      <strong>Course Type:</strong> {courseData.kind}
+                    </li>
+                    <li>
+                      <strong>Course Objectives:</strong>
+                      <ul>
+                        {courseData.objectives.map((objective: string) => {
+                          return (
+                            <li>{objective}</li>
+                          );
+                        })}
+                      </ul>
+                    </li>
+                  </td>
+                  <td className="right">
+                    <table className="creditTable">
+                      <caption>Credit Distribution</caption>
+                      <tr>
+                        <th>Branch</th>
+                        <th>Semester</th>
+                        <th>Lecture</th>
+                        <th>Practical</th>
+                        <th>Tutorial</th>
+                        <th>Total</th>
+                      </tr>
+                      {courseData.specifics.map((specific: any) => {
+                        return (
+                          <tr>
+                            <td>{specific.branch}</td>
+                            <td>{specific.semester}</td>
+                            <td>{specific.credits[0]}</td>
+                            <td>{specific.credits[1]}</td>
+                            <td>{specific.credits[2]}</td>
+                            <td>{specific.credits[3]}</td>
+                          </tr>
+                        );
+                      })}
+                    </table>
+                  </td>
+                </tr>
+              </table>
             </div>
-            <div className="courseObjectives">
-              <h3> Course objectives </h3>
-              <div>
-                {courseData.objectives.map((book: any) => {
-                  return <PostHolderCard name={book} noLogo={true} />;
-                })}
-              </div>
-            </div>
-            <div className="courseOutcomes">
-              <h3> Course outcomes </h3>
-              <div>
-                {courseData.outcomes.map((book: any) => {
-                  return <PostHolderCard name={book} noLogo={true} />;
-                })}
-              </div>
-            </div>
-            <div className="recommendedCourseBooks">
-              <h3> Recommended Books </h3>
-              <div className="holdersList">
-                {courseData.book_names.map((book: any) => {
-                  return <PostHolderCard name={book} />;
-                })}
-              </div>
-            </div>
-          </div>
+
+          <li>
+            <strong>Course Content:</strong>
+            <ReactMarkdown className="md">{courseData.content}</ReactMarkdown>
+          </li>
+
+          <li>
+            <strong>Recommended Books:</strong>
+            <ul>
+              {courseData.book_names.map((book_name: string) => {
+                return (
+                  <li>{book_name}</li>
+                );
+              })}
+            </ul>
+          </li>
+
+          <li>
+            <strong>Course Outcomes:</strong>
+            <ul>
+              {courseData.outcomes.map((outcome: string) => {
+                return (
+                  <li>{outcome}</li>
+                );
+              })}
+            </ul>
+          </li>
+        </div>
         </div>
       )}
     </>
