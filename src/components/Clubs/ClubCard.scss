@@ -1,15 +1,16 @@
 .cardContainer {
-  border-radius: 15px;
-  width: 400px;
-  height: 200px;
-  // background: #2F3136;
-  background-color: #000 ; 
-  margin: 6px; 
+    padding: 1.5rem;
+    border-radius: 15px;
+    width: 400px;
+    height: 200px;
+    background-color: gray;
+    margin: 8px;
+    position: relative;
 }
 
 .namingSection {
-  display: flex;
-  flex-direction: row;
+    display: flex;
+    flex-direction: row;
 }
 
 .clubLogoContainer {
@@ -17,33 +18,38 @@
 }
 
 .clubLogo {
-  width: 64px;
-  height: 64px;
+    width: 64px;
+    height: 64px;
 }
 
 .clubNameContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  margin-left: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 12px;
 }
 
 .alias {
-
+    font-size: 1.25rem;
 }
 
-.completeName {
-
+.clubTypeContainer {
+    padding: 12px;
 }
 
-.clubDescriptionContainer {
-  padding: 12px;
+.clubSocials {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    min-width: 88%;
 }
-
-.socialHandles {
-  padding: 12px;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
+.clubSocial {
+    font-size: 2rem;
+    padding: 0 0.5rem 0.5rem 0.5rem;
+    border-radius: 15px 15px 0 0;
+    margin: 0 0.5rem 0 0.5rem;
+    background-color: darkgray;
 }

@@ -1,92 +1,87 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import {
   FaDiscord,
   FaFacebook,
   FaInstagram,
   FaLinkedin,
+  FaMailBulk,
   FaQuora,
+  FaWordpress,
 } from "react-icons/fa";
 import "./ClubCard.scss";
 import logo from "../../assets/logo.svg";
 
 const ClubCard = (props: any) => {
-  const { name, description, socials } = props;
+  const { name, kind, socials } = props;
 
   return (
     <div className="cardContainer">
-      <div className="namingSection">
-        {/** photo and name */}
-        <div className="clubLogoContainer">
-          <img src={logo} alt="club logo" className="clubLogo" />
+      <Link to={`/clubs/${name}`}>
+        <div className="namingSection">
+          {/** photo and name */}
+          <div className="clubLogoContainer">
+            <img src={logo} alt="club logo" className="clubLogo" />
+          </div>
+          <div className="clubNameContainer">
+            <div className="alias"> {name} </div>
+            {/* <div className="completeName">English Literary and Debating Club</div> */}
+          </div>
         </div>
-        <div className="clubNameContainer">
-          <div className="alias"> {name} </div>
-          {/* <div className="completeName">English Literary and Debating Club</div> */}
-        </div>
-      </div>
-      <div className="clubDescriptionContainer">
+      </Link>
+      <div className="clubTypeContainer">
         {/**description */}
-        {/* "Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's ." */}
-        {description}
+        {kind}
       </div>
-      <div className="socialHandles">
-        {/**socials */}
-        {socials.discord ? (
-          <div
-            onClick={() => {
-              window.location.href = `${socials.discord}`;
-            }}
-          >
-            <FaDiscord />
-          </div>
-        ) : (
-          <></>
-        )}
-        {socials.facebook ? (
-          <div
-            onClick={() => {
-              window.location.href = `${socials.facebook}`;
-            }}
-          >
-            <FaFacebook />
-          </div>
-        ) : (
-          <></>
-        )}
-        {socials.instagram ? (
-          <div
-            onClick={() => {
-              window.location.href = `${socials.instagram}`;
-            }}
-          >
-            <FaInstagram />
-          </div>
-        ) : (
-          <></>
-        )}
-        {socials.linkedin ? (
-          <div
-            onClick={() => {
-              window.location.href = `${socials.linkedin}`;
-            }}
-          >
-            <FaLinkedin />
-          </div>
-        ) : (
-          <></>
-        )}
-        {socials.quora ? (
-          <div
-            onClick={() => {
-              window.location.href = `${socials.quora}`;
-            }}
-          >
-            <FaQuora />
-          </div>
-        ) : (
-          <></>
-        )}
+      <div className="clubSocials">
+        {socials.map((social: any) => {
+          switch (social.platform) {
+            case 'discord':
+              return (
+                <a className="clubSocial" href={social.link}>
+                  <FaDiscord />
+                </a>
+              );
+            case 'email':
+              return (
+                <a className="clubSocial" href={social.link}>
+                  <FaMailBulk />
+                </a>
+              );
+            case 'facebook':
+              return (
+                <a className="clubSocial" href={social.link}>
+                  <FaFacebook />
+                </a>
+              );
+            case 'instagram':
+              return (
+                <a className="clubSocial" href={social.link}>
+                  <FaInstagram />
+                </a>
+              );
+            case 'linkedin':
+              return (
+                <a className="clubSocial" href={social.link}>
+                  <FaLinkedin />
+                </a>
+              );
+            case 'quora':
+              return (
+                <a className="clubSocial" href={social.link}>
+                  <FaQuora />
+                </a>
+              );
+            case 'wordpress':
+              return (
+                <a className="clubSocial" href={social.link}>
+                  <FaWordpress />
+                </a>
+              );
+            default:
+              return null
+          }
+        })}
       </div>
     </div>
   );

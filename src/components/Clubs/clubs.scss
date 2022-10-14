@@ -1,18 +1,21 @@
-.clubsPageMainContainer {
-  // background-color: #000;
-  height: 100vh;
-  padding: 12px;
-  margin:12px;
+.clubsPageMainContainer .headingConatiner {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+    border-bottom: 0.25px solid gray;
 }
-.headingConatiner {
-  font-size: 96px;
-  padding: 12px;
+
+.headingConatiner h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
 }
 
 .clubsList {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-self: center;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-self: center;
 }

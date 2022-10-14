@@ -1,5 +1,4 @@
 import * as React from "react";
-import { Link } from "react-router-dom";
 import ClubCard from "./ClubCard";
 import Axios from "axios";
 import "./clubs.scss";
@@ -23,17 +22,19 @@ const Clubs = () => {
   }, []);
   return (
     <div className="clubsPageMainContainer">
-      <h1 className="headingConatiner">Clubs</h1>
-      <div className="clubsList">
+      <div className="headingConatiner container">
+        <h1>Clubs</h1>
+        <p>This list currently only contains clubs affiliated with the college directly.</p>
+      </div>
+
+      <div className="clubsList container">
         {clubs.map((club) => {
           return (
-            <Link to={`/clubs/${club.name}`}>
-              <ClubCard
-                name={club.name}
-                description={club.description}
-                socials={club.socials}
-              />
-            </Link>
+            <ClubCard
+              name={club.name}
+              kind={club.kind}
+              socials={club.socials}
+            />
           );
         })}
       </div>
