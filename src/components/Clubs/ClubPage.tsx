@@ -9,8 +9,11 @@ import {
   FaFacebook,
   FaInstagram,
   FaLinkedin,
+  FaMailBulk,
   FaQuora,
+  FaWordpress,
 } from "react-icons/fa";
+import ReactMarkdown from "react-markdown";
 
 const ClubPage = (props: any) => {
   const { id } = useParams();
@@ -36,132 +39,81 @@ const ClubPage = (props: any) => {
         <> Loading...</>
       ) : (
         <div className="clubFullPageContainer">
-          <div> {id} </div>
-          <div className="clubName"> {clubData.name} </div>
-          <div className="clubImageContainer">
-            <img className="clubImage" src={logo} alt="club logo" />
-            <div className="clubDescription">
-              {/* Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged. It was popularised in the 1960s with
-          the release of Letraset sheets containing Lorem Ipsum passages, and
-          more recently with desktop publishing software like Aldus PageMaker
-          including versions of Lorem Ipsum. */}
-              {clubData.description}
+          <div className="headingContainer container">
+            <h1> {clubData.name} </h1>
+          </div>
+
+          <div className="clubDescription container">
+            <ReactMarkdown>{clubData.description}</ReactMarkdown>
+          </div>
+
+          <div className="clubAdmins container">
+            <h3>Post Holders</h3>
+            <div className="holdersList">
+              {clubData.admins.map((admin: any) => {
+                return <PostHolderCard name={admin.name} phone={admin.phone} email={admin.email} />;
+              })}
             </div>
-            <div className="clubLeaders">
-              <h3> Our Leaders </h3>
-              {clubData.admins ? (
-                <div className="holdersList">
-                  {clubData.admins.map((admin: any) => {
-                    return <PostHolderCard name={admin.name} />;
-                  })}
-                </div>
-              ) : (
-                <div className="holdersList">
-                  <div className="postHolderCardDiv">
-                    <PostHolderCard />
-                  </div>
-                  <div className="postHolderCardDiv">
-                    <PostHolderCard />
-                  </div>
-                  <div className="postHolderCardDiv">
-                    <PostHolderCard />
-                  </div>
-                  <div className="postHolderCardDiv">
-                    <PostHolderCard />
-                  </div>
-                  <div className="postHolderCardDiv">
-                    <PostHolderCard />
-                  </div>
-                </div>
-              )}
-              {clubData.faculty ? (
-                <div className="holdersList">
-                  {clubData.faculty.map((admin: any) => {
-                    return <PostHolderCard name={admin.name} />;
-                  })}
-                </div>
-              ) : (
-                <div className="holdersList">
-                  <div className="postHolderCardDiv">
-                    <PostHolderCard />
-                  </div>
-                  <div className="postHolderCardDiv">
-                    <PostHolderCard />
-                  </div>
-                  <div className="postHolderCardDiv">
-                    <PostHolderCard />
-                  </div>
-                  <div className="postHolderCardDiv">
-                    <PostHolderCard />
-                  </div>
-                  <div className="postHolderCardDiv">
-                    <PostHolderCard />
-                  </div>
-                </div>
-              )}
+          </div>
+
+          <div className="clubFaulties container">
+            <h3>Faculties In-Charge</h3>
+            <div className="holdersList">
+              {clubData.faculties.map((faculty: any) => {
+                return <PostHolderCard name={faculty.name} />;
+              })}
             </div>
-            <div className="clubSocials">
-              {clubData.socials.discord ? (
-                <div
-                  onClick={() => {
-                    window.location.href = `${clubData.socials.discord}`;
-                  }}
-                >
-                  <FaDiscord />
-                </div>
-              ) : (
-                <></>
-              )}
-              {clubData.socials.facebook ? (
-                <div
-                  onClick={() => {
-                    window.location.href = `${clubData.socials.facebook}`;
-                  }}
-                >
-                  <FaFacebook />
-                </div>
-              ) : (
-                <></>
-              )}
-              {clubData.socials.instagram ? (
-                <div
-                  onClick={() => {
-                    window.location.href = `${clubData.socials.instagram}`;
-                  }}
-                >
-                  <FaInstagram />
-                </div>
-              ) : (
-                <></>
-              )}
-              {clubData.socials.linkedin ? (
-                <div
-                  onClick={() => {
-                    window.location.href = `${clubData.socials.linkedin}`;
-                  }}
-                >
-                  <FaLinkedin />
-                </div>
-              ) : (
-                <></>
-              )}
-              {clubData.socials.quora ? (
-                <div
-                  onClick={() => {
-                    window.location.href = `${clubData.socials.quora}`;
-                  }}
-                >
-                  <FaQuora />
-                </div>
-              ) : (
-                <></>
-              )}
-            </div>
+          </div>
+
+          <div className="clubSocials">
+            {clubData.socials.map((social: any) => {
+              switch (social.platform) {
+                case 'discord':
+                  return (
+                    <a className="clubSocial" href={social.link}>
+                      <FaDiscord />
+                    </a>
+                  );
+                case 'email':
+                  return (
+                    <a className="clubSocial" href={social.link}>
+                      <FaMailBulk />
+                    </a>
+                  );
+                case 'facebook':
+                  return (
+                    <a className="clubSocial" href={social.link}>
+                      <FaFacebook />
+                    </a>
+                  );
+                case 'instagram':
+                  return (
+                    <a className="clubSocial" href={social.link}>
+                      <FaInstagram />
+                    </a>
+                  );
+                case 'linkedin':
+                  return (
+                    <a className="clubSocial" href={social.link}>
+                      <FaLinkedin />
+                    </a>
+                  );
+                case 'quora':
+                  return (
+                    <a className="clubSocial" href={social.link}>
+                      <FaQuora />
+                    </a>
+                  );
+                case 'wordpress':
+                  return (
+                    <a className="clubSocial" href={social.link}>
+                      <FaWordpress />
+                    </a>
+                  );
+                default:
+                  return null
+              }
+            })}
           </div>
         </div>
       )}

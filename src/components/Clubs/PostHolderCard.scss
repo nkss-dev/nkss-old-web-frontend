@@ -1,19 +1,35 @@
 .postHolderCardContainer {
+    border-radius: 15px;
+    border: 0.05rem dashed darkgray;
+    padding: 1rem;
+}
 
+.postHolderHeader {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
 }
 
 .postHolderImageContainer {
-  
+    
 }
 
 .postHolderImage {
-  border-radius: 24px;
-  width: 273px;
-  height: 273px;
+    border-radius: 24px;
+    width: 64px;
+    height: 64px;
 }
 
 .postHolderName {
-  font-size: 24px;
-  font-weight: 500;
-  line-height: 36px;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 36px;
+    padding: 10px;
+}
+.postHolderPhone .postHolderEmail {
+    margin: 1rem;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 36px;
+    padding: 10px;
 }

@@ -1,13 +1,14 @@
-.clubFullPageContainer {
-
+.clubFullPageContainer .headingContainer{
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+    border-bottom: 0.25px solid gray;
 }
 
-.clubName {
-  text-align: center;
-  font-size: 64px;
-  font-weight: 600;
-  color: #0CBC8B;
-  line-height: 96px ;
+.headingContainer h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
 
 }
 
@@ -47,5 +48,4 @@
   flex-direction: row;
   justify-content: center;
   margin-top: 24px;
-  margin-bottom: 8px;
 }

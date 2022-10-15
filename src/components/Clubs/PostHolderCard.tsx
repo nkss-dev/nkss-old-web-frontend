@@ -5,18 +5,12 @@ import logo from "../../assets/logo.svg";
 const PostHolderCard = (props: any) => {
   return (
     <div className="postHolderCardContainer">
-      <div className="postHolderImageContainer">
-        {props.noLogo === true ? (
-          <></>
-        ) : (
-          <img className="postHolderImage" src={logo} alt={`postHolderName`} />
-        )}
-        <div className="postHolderName">
-          {" "}
-          {props.name ? props.name : "John Doe"}{" "}
-        </div>
-        <div></div>
+      <div className="postHolderHeader">
+        <img className="postHolderImage" src={logo} alt="postHolderName" />
+        <div className="postHolderName">{props.name}</div>
       </div>
+      <div className="postHolderPhone">{props.phone ? "Phone: " + props.phone : ""}</div>
+      <div className="postHolderEmail">Email: {props.email}</div>
     </div>
   );
 };
