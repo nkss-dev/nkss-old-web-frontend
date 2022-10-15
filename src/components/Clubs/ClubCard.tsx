@@ -38,43 +38,43 @@ const ClubCard = (props: any) => {
           switch (social.platform) {
             case 'discord':
               return (
-                <a className="clubSocial" href={social.link}>
+                <a className="clubSocial" href={social.link} target="_blank">
                   <FaDiscord />
                 </a>
               );
             case 'email':
               return (
-                <a className="clubSocial" href={social.link}>
+                <a className="clubSocial" href={"mailto:" + social.link} target="_blank">
                   <FaMailBulk />
                 </a>
               );
             case 'facebook':
               return (
-                <a className="clubSocial" href={social.link}>
+                <a className="clubSocial" href={social.link} target="_blank">
                   <FaFacebook />
                 </a>
               );
             case 'instagram':
               return (
-                <a className="clubSocial" href={social.link}>
+                <a className="clubSocial" href={social.link} target="_blank">
                   <FaInstagram />
                 </a>
               );
             case 'linkedin':
               return (
-                <a className="clubSocial" href={social.link}>
+                <a className="clubSocial" href={social.link} target="_blank">
                   <FaLinkedin />
                 </a>
               );
             case 'quora':
               return (
-                <a className="clubSocial" href={social.link}>
+                <a className="clubSocial" href={social.link} target="_blank">
                   <FaQuora />
                 </a>
               );
             case 'wordpress':
               return (
-                <a className="clubSocial" href={social.link}>
+                <a className="clubSocial" href={social.link} target="_blank">
                   <FaWordpress />
                 </a>
               );
