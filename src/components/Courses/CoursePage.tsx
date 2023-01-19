@@ -91,7 +91,14 @@ const CoursePage = (props: any) => {
 
           <li>
             <strong>Course Content:</strong>
-            <ReactMarkdown className="md">{courseData.content}</ReactMarkdown>
+            <ol>
+              {courseData.content.map((unit: string, index: number) => {
+                return <li key={index+1} className="list-none">
+                  <h4>Unit {index+1}</h4>
+                  <ReactMarkdown>{unit}</ReactMarkdown>
+                </li>
+              })}
+            </ol>
           </li>
 
           <li>
