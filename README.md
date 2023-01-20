@@ -1,6 +1,6 @@
-# Status: Moved permanently to [nkss-web-frontend](https://github.com/NIT-KKR-Student-Support-System/nkss-web-frontend)
+# Status 301: Moved permanently to [web-front-end](https://github.com/NIT-KKR-Student-Support-System/web-front-end)
 
-We have decided to shift technologies and use the [Next.js](https://nextjs.org/) framework instead for the front-end of NKSSS' webpage.
+We have decided to rewrite the web-front-end to remove code smells from its root and to also smoothen our transition to using the [Next.js](https://nextjs.org/) framework instead for the front-end of NKSSS' webpage. Following this, a new repository has been created on which all future work shall be done.
 
 ---
 
