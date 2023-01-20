@@ -1,3 +1,9 @@
+# Status: Moved permanently to [nkss-web-frontend](https://github.com/NIT-KKR-Student-Support-System/nkss-web-frontend)
+
+We have decided to shift technologies and use the [Next.js](https://nextjs.org/) framework instead for the front-end of NKSSS' webpage.
+
+---
+
 # NKSS Web Frontend
 
 This repository holds the source tree for the web frontend of NIT KKR Student Support System. The project is using ```Typescript``` as the language of choice with the ```ReactJS``` web framework. ```Cypress``` is being used for testing. You need to have ```NodeJS``` and ```npm``` installed locally to run this app.
